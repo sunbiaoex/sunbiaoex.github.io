@@ -297,7 +297,75 @@ plt.plot(t2,np.<span class="built_in">cos</span>(<span class="number">2</span>*n
 plt.xlabel(<span class="string">'time'</span>)
 plt.ylabel(<span class="string">'amplitude'</span>)
 plt.show()
-</code></pre><p>EOF.</p>
+</code></pre><h3 id="附录">附录</h3>
+<h4 id="1-_Python和MATLAB特殊差别对照表">1. Python和MATLAB特殊差别对照表</h4>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>MATLAB</th>
+<th>Python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>注释</td>
+<td><code>%</code></td>
+<td><code>#</code></td>
+</tr>
+<tr>
+<td>开始索引</td>
+<td><code>1</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>矩阵连接</td>
+<td><code>[a, b]</code></td>
+<td><code>numpy.concatenate(a, b)</code></td>
+</tr>
+<tr>
+<td>循环和分支语句</td>
+<td>未结束的条件行以<code>,</code>结尾，结束需要<code>end</code></td>
+<td>未结束的条件行以<code>:</code>结尾，结束不需要任何东西</td>
+</tr>
+<tr>
+<td>产生全0全1矩阵</td>
+<td><code>zeros(m, n)</code> 和 <code>ones(m, n)</code></td>
+<td><code>numpy.zeros((m, n))</code> 和 <code>numpy.ones((m, n))</code></td>
+</tr>
+<tr>
+<td>整除问题</td>
+<td><code>/</code> 直接取准确结果，不存在整除问题</td>
+<td><code>/</code> 两边都是整数时为整除，分子或分母需要加float强制转换</td>
+</tr>
+<tr>
+<td>乘方</td>
+<td><code>a^b</code></td>
+<td><code>a**b</code></td>
+</tr>
+<tr>
+<td>矩阵向量转置</td>
+<td>单引号<code>&#39;</code>搞定</td>
+<td>没有重载<code>&#39;</code>操作符，需要调用<code>.transpose</code>或 <code>.T</code></td>
+</tr>
+<tr>
+<td>结构体数组</td>
+<td>直接<code>{ }</code>搞定</td>
+<td><code>{ }</code> 指的是字典数据结构，没有结构体的概念，只能使用“对象列表”搞定</td>
+</tr>
+<tr>
+<td>向量矩阵相乘</td>
+<td><code>a*b</code> 代表正常的矩阵相乘，也就是说a的列数必须和b的行数匹配的那种；</td>
+<td><code>a*b</code> 代表对应元素相乘，即elementwise，a和b的维数必须相等；</td>
+</tr>
+<tr>
+<td></td>
+<td><code>a.*b</code>代表对应元素相乘，即elementwise，a和b的维数必须相等</td>
+<td><code>dot(a, b)</code>代表正常的矩阵相乘，也就是说a的列数必须和b的行数匹配的那种</td>
+</tr>
+</tbody>
+</table>
+<p>EOF.</p>
 	  
 
 	  <div>
